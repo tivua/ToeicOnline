@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="toeic-web:war">
+    <output-path>$PROJECT_DIR$/toeic-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>toeic-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="toeic-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="toeic-web:war exploded" />
+    </root>
+  </artifact>
+</component>
