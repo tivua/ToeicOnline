@@ -1,0 +1,69 @@
+// ham nay trong package : vn.sinbad.core.test, thuoc folder src/test/java/vn.sinbad.core.test/RoleTest.java
+
+package vn.sinbad.core.test;
+
+import org.testng.annotations.Test;
+import vn.sinbad.core.dao.RoleDao;
+import vn.sinbad.core.daoimpl.RoleDaoImpl;
+import vn.sinbad.core.persistence.entity.RoleEntity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RoleTest {
+
+    @Test
+    public void checkFindAll() {
+        RoleDao roleDao = new RoleDaoImpl();
+        List<RoleEntity> list = roleDao.findAll();
+    }
+
+    @Test
+    public void checkUpdateRole() {
+        RoleDao roleDao = new RoleDaoImpl();
+        RoleEntity entity = new RoleEntity();
+        entity.setRoleId(2);
+        entity.setName("USER");
+        roleDao.update(entity);
+
+    }
+
+    @Test
+    public void checkSaveRole() {
+        RoleDao roleDao = new RoleDaoImpl();
+        RoleEntity entity = new RoleEntity();
+        entity.setRoleId(2);
+        entity.setName("USER");
+        roleDao.update(entity);
+
+    }
+
+    @Test
+    public void checkFindByIdRole() {
+        RoleDao roleDao = new RoleDaoImpl();
+        RoleEntity entity = roleDao.findById(1);
+    }
+
+    @Test
+    public void checkFindByProperty() {
+        RoleDao roleDao = new RoleDaoImpl();
+        String property = null;
+        Object value = null;
+        String sortExpression = null;
+        String sortDirection = null;
+        //neu khong muon tim kiem theo truong gi -> thi de null o cac truong
+        Object[] objects = roleDao.findByProperty(property,value,sortExpression,sortDirection);
+
+    }
+
+    @Test
+    public void checkDelete() {
+        List<Integer> listId = new ArrayList<Integer>();
+        listId.add(1);
+        listId.add(2);
+
+        RoleDao roleDao = new RoleDaoImpl();
+        Integer count = roleDao.delete(listId); // xem count tra ve bao nhieu, neu bang 2 la dung
+
+    }
+}
